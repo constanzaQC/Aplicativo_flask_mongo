@@ -1,0 +1,28 @@
+
+#get 
+
+GET http://127.0.0.1:3000/pelicula/
+
+
+###
+
+POST http://127.0.0.1:3000/pelicula/
+Content-Type: application/json
+
+{
+    "codigo":13,
+    "titulo":"duende verde",
+    "protagonista":"duende",
+    "duracion":55,
+    "resumen":"un duende hace ashu",
+    "genero":"67e4831b45482dd0ddfe23be"
+}
+
+
+###
+PUT http://127.0.0.1:3000/pelicula/
+Content-Type: application/json
+
+{
+    "id":
+}

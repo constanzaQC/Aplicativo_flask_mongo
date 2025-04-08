@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+
+{% block menu %}
+    {% include "encabezado.html"%}
+{% endblock%}
+
+{% block contenido %}
+<!-- html para listar -->
+<script src="../static/js/app.js"></script>
+<div class="w-50" style="margin: 0 auto">
+    <h3 class="text-center fw-bold">LISTA DE GÉNEROS DE PELÍCULAS</h3>
+    <div>
+        <a href="/vistaGenero/">
+            <button class="btn btn-secondary">Agregar</button>
+        </a>
+    </div>
+    <table class="table table-bordered mt-2">
+        <thead class="table-secondary">
+            <tr>
+                <th>Nombre</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for genero in generos %}
+            <tr>
+                <td width="80%">{{genero.nombre}}</td>
+                <td class="text-center">
+                    <a href="/editarGenero/{{genero.id}}"><i class="fa fa-edit text-warning" title="Editar"></i></a>
+                    <i class="fa fa-trash text-danger" title="Eliminar" onclick="deleteGenero('{{genero.id}}')"></i>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock%}
+
+{% block piePagina %}
+    {% include "piePagina.html" %}
+{% endblock %}

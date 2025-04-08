@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{% block menu %}
+    {% include "encabezado.html"%}
+{% endblock%}
+
+{% block contenido %}
+<script src="{{ url_for('static', filename='js/app.js')}} "></script>
+    <div class="w-25" style="margin: 0 auto">
+        <form id="frmPelicula" class="was-validated" enctype="multipart/form-data">
+            <div>
+                <h3 class="text-center fw-bold bg-dark text-white" style="font-size:2lvw">
+                    EDITAR GENERO
+                </h3>
+            </div>
+            <div class="mb-3">
+                <label class="fw-bold" for="txtNombre">Título:</label>
+                <input type="text" name="txtTitulo" id="txtnombre" class="form-control" value="{{genero.nombre}}" required>
+            </div>
+            <div>
+                <button type="button" class="btn btn-dark" onclick="editarGenero('{{genero.id}}')">Editar</button>
+                <a href="/generos/"><button type="button" class="btn btn-secondary">Cancelar</button></a>
+            </div>
+        </form>
+    </div>
+{% endblock%}
+
+{% block piePagina %}
+    {% include "piePagina.html" %}
+{% endblock %}
