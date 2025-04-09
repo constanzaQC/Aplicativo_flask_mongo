@@ -78,7 +78,7 @@ def generar_contraseña(n=8):
     caracteres = string.ascii_letters + string.digits
     return ''.join(random.choice(caracteres) for _ in range(n))
 
-@app.route("/recuperar/", methods=["GET","POST"])
+@app.route("/newcontrasena/", methods=["GET","POST"])
 def recuperar():
     mensaje = ""
     try:
